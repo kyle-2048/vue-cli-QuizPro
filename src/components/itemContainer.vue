@@ -70,7 +70,7 @@
                 this.$router.push('item');
                 this.initializeChoose();
             },
-            //根据index返回所在的是选项几
+            //根据index返回所在的是选项多少
             returnOption:index=>{
                 switch (index) {
                     case 0:return 'A';
@@ -79,14 +79,15 @@
                     case 3:return 'D'
                 }
             },
+            //点击选项后赋值给状态
             choose(index,id){
                 this.chooseNum=index;
                 this.chooseId=id;
             },
             nextItem(){
                 if(this.chooseNum!==null){
-                    this.addNum(this.chooseId);
-                    this.chooseNum=null;
+                    this.addNum(this.chooseId);  //往答案数组里添加当前所选的选项
+                    this.chooseNum=null;  //重置存储所选项的状态
                     this.chooseId=null;
                     console.log(this.answerid);
                     console.log(this.itemNum);
@@ -94,10 +95,12 @@
                     alert('请选择你的答案')
                 }
             },
+            //重置所选项状态
             initializeChoose(){
                 this.chooseNum=null;
                 this.chooseId=null;
             },
+            //提交答题结果，跳转到分数页面
             submitItem(){
                 this.$router.push('score')
                 this.addNum(this.chooseId);

@@ -37,12 +37,13 @@
             return{
                 rightAnswer: [2, 7, 12, 13, 18], //正确答案
                 scoreTipsArr:['你说，是不是把知识都还给小学老师了？','还不错，但还需要继续加油哦！','不要嘚瑟还有进步的空间！','智商离爆表只差一步了！','你也太聪明啦，葡萄之家欢迎你！'],
-                score:0,
+                score:0,  //初始分数为0
                 shareIsShow:false,
             }
         },
         computed:{
           ...mapState(['answerid']),
+            //对比答案和记录客户答案的数组，计算分数
             totalScore(){  //computed方法要加return
                 this.rightAnswer.forEach((item,index)=>{
                     if(item==this.answerid[index]){
@@ -51,6 +52,7 @@
                 });
                 return this.score;
             },
+            //根据分数获取对应的评价
             pingjia(){
               if(this.score===0){
                   return '你这考的什么玩意!回家种田去吧'
