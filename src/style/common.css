@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-weight: lighter;
+  font-family: 'Microsoft YaHei UI';
+  font-size: 24.15vw;
+  border: none;
+}
+html {
+  height: 100%;
+  width: 100%;
+}
+body {
+  height: 100%;
+  width: 100%;
+  background: url("../images/1-1.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+/*# sourceMappingURL=common.css.map */
